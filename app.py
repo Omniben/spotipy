@@ -44,22 +44,31 @@ print("\n\n")
 
 
 '''______Reproduciendo canciones____'''
+input('')
 
 print('____________Reproduciendo desde el usuario premium____________')
-input('')
 
+print("______Reproduciendo una cancion______")
 bj.play(ImagineDragons["Mercury - Acts 1 & 2"][0])
-print("")
+print('')
+print("______Reproduciendo una playlist______")
 bj.play(bj.liked_songs)
+print('\n\n')
+print("______Reproduciendo un album______")
 bj.play(the_album)
-print("\n\n")
+print('\n\n')
 
-
-print('____________Reproduciendo desde el usuario free____________')
 input('')
+print('____________Reproduciendo desde el usuario free____________')
 
+print('')
+print("______Reproduciendo una playlist______")
 free.play(free.liked_songs)
-print("")
+input('')
+print('\n\n')
+print("______Reproduciendo un album______")
 free.play(the_album)
-print("")
+input('')
+print('\n\n')
+print("______Reproduciendo una cancion______")
 free.play(ImagineDragons["Mercury - Acts 1 & 2"][1])

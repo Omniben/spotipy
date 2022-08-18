@@ -1,5 +1,6 @@
 import time
 
+#Usaremos el "time" para imprimir de una forma más legible, ya que la duracion la ingresamos como un entero que seria igual a los segundos
 
 class Song:
 	def __init__(self, name, performer, duration, plays=0, **kwargs):
@@ -23,17 +24,12 @@ class Song:
 	def get_plays(self):
 		return f'Plays: {self.plays}'
 
+
+
 	def read(self):
 		duration = time.strftime("%M:%S",time.gmtime(self.duration))
-		if self.plays > 100:
-			if self.name_album:
-				return f"{self.name}   {self.performer}   {self.name_album}   {self.plays}   {duration}"
+		if self.name_album:
+			return f"{self.name}   {self.performer}   {self.name_album}   {duration}"
 
-			else:
-				return f"{self.name}   {self.performer}   {self.plays}   {duration}"
 		else:
-			if self.name_album:
-				return f"{self.name}   {self.performer}   {self.name_album}   {duration}"
-
-			else:
-				return f"{self.name}   {self.performer}   {duration}"			
+			return f"{self.name}   {self.performer}   {duration}"

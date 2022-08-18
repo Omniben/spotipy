@@ -42,6 +42,7 @@ class User:
 		return f'{self.username}'
 
 
+#El metodo para dar likes actuara conforme a lo que se le quiera dar like
 
 	def give_like(self, liked):
 		try:
@@ -78,4 +79,5 @@ class User:
 
 	def create_playlist(self, name):
 		self.created_playlists.append(Playlist(name, self))
+		print('Playlist creada')
 		return self.created_playlists[-1]

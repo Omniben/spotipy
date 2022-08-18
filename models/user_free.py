@@ -13,6 +13,9 @@ class UserFree(User):
 		self.subscription = subscription
 
 
+
+#Ya que no usamos el self, hacemos de este metodo un metodo estatico y al mismo tiempo usamos la polimorfia en el metodo de el usuario premium
+
 	@staticmethod
 	def play(to_play):
 		try:
@@ -39,7 +42,7 @@ class UserFree(User):
 				while True:
 					eleccion = input('Reproduces la playlist? si/no:  ')
 
-					if eleccion == "si":
+					if eleccion.lower() == "si":
 						print("")
 						mix_1.show_playlist()
 						playing = random.choice(mix_1.songs)
@@ -47,7 +50,7 @@ class UserFree(User):
 						print(f'\nReproduciendo aleatoriamente   {playing}')
 						break
 
-					elif eleccion == "no":
+					elif eleccion.lower() == "no":
 						print('No se reproducira la playlist')
 						break
 

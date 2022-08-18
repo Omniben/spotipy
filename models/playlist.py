@@ -23,28 +23,34 @@ class Playlist:
 	def add_song(self, song):
 		self.songs.append(song)
 
+
+#Usamos un menu con indice para darle al usuarios las opciones para borrar
+
 	def del_song(self):
-		for index,song in enumerate(self.songs, start=1):
-			print(f'{index}.→ {song}')
+		if self.songs:
+			for index,song in enumerate(self.songs, start=1):
+				print(f'{index}.→ {song}')
 
-		while True:
-			try:
-				delete = int(input('\nIngresa el número de la canción que quieras borrar o presiona "0" para cancelar: '))
+			while True:
+				try:
+					delete = int(input('\nIngresa el número de la canción que quieras borrar o presiona "0" para cancelar: '))
 
-			except ValueError:
-				print('Ingresa números')
-				continue
-
-				if delete == 0:
-					break
-			
-				elif delete-1 < len(self.songs):
-					self.songs[delete-1]
-					break
-
-				else:
-					print('Número invalido')
+				except ValueError:
+					print('Ingresa números')
 					continue
+
+					if delete == 0:
+						break
+				
+					elif delete-1 < len(self.songs):
+						self.songs[delete-1]
+						break
+
+					else:
+						print('Número invalido')
+						continue
+		else:
+			print('La playlist está vacia')
 
 
 	def show_playlist(self):

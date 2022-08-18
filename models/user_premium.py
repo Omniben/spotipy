@@ -2,7 +2,6 @@ from .user import User
 from .playlist import Playlist
 from .album import Album
 from .song import Song
-from .save_songs import mix_1
 from .exceptions import FileError
 
 
@@ -11,6 +10,9 @@ class UserPremium(User):
 		super().__init__(fullname, date_birth, username, password, **kwargs)
 		self.subscription = subscription
 
+
+
+#Ya que no usamos el self, hacemos de este metodo un metodo estatico y al mismo tiempo usamos la polimorfia en el metodo de el usuario free
 
 	@staticmethod
 	def play(to_play):
