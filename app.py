@@ -17,7 +17,7 @@ song_prueba = Song("i'll see you again", "League of Legends, suteki", 214, 59735
 
 
 ''' Creación de 1 usuario free y 1 usuario premium'''
-free = UserFree('Juan', '10-10-2000', 'gratis', 'qwerty123')
+free = UserFree('Juan', '10-10-2000', 'Usuario gratis', 'qwerty123')
 bj = UserPremium('Benjamin', '13-01-2002', 'BJ', '1234567a')
 
 

@@ -24,9 +24,13 @@ class Playlist:
 		self.songs.append(song)
 
 
-#Usamos un menu con indice para darle al usuarios las opciones para borrar
+	@classmethod
+	def create_mix(cls, songs):
+		return cls("Mi mix", songs=songs)
+
 
 	def del_song(self):
+		"""Función usada para borrar canciones, le imprimiremos al usuario las canciones con un indice el cual el usuario usara para borrar la canción que desee"""
 		if self.songs:
 			for index,song in enumerate(self.songs, start=1):
 				print(f'{index}.→ {song}')
@@ -54,6 +58,7 @@ class Playlist:
 
 
 	def show_playlist(self):
+		"""Esta funcion la usamos para imprimir la información de la playlist y las canciones de esta"""
 		if self.description:
 			print(self.name)
 			print(self.description)

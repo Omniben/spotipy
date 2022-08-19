@@ -1,6 +1,7 @@
 from .song import Song
 from .album import Album
 from .playlist import Playlist
+import random
 
 Blackpink = {
 	"The Album": [
@@ -31,15 +32,9 @@ ImagineDragons = {
 }
 
 
-mix_songs = Blackpink["The Album"][0:4] + ImagineDragons["Mercury - Acts 1 & 2"][0:3] + ImagineDragons["Evolve"][0:2]
+mix_songs = random.sample(Blackpink["The Album"], 4) + random.sample(ImagineDragons["Mercury - Acts 1 & 2"], 2) + random.sample(ImagineDragons["Evolve"], 2)
 
 
-mix_1 = Playlist("Mi mix", songs=mix_songs)
+mix_1 = Playlist.create_mix(mix_songs)
 
 the_album = Album("The Album", Blackpink["The Album"])
-
-
-#"Mercury - Acts 1 & 2", ft="JID"
-#
-#"Mercury - Acts 1 & 2"
-#"Evolve"

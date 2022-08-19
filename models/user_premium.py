@@ -12,10 +12,10 @@ class UserPremium(User):
 
 
 
-#Ya que no usamos el self, hacemos de este metodo un metodo estatico y al mismo tiempo usamos la polimorfia en el metodo de el usuario free
-
 	@staticmethod
 	def play(to_play):
+		"""Esta función sera la encargada de reproducir playlists, albums y canciones.
+		En caso de no ingresarle una instancia de una de las 3 clases mencionadas anteriormente dara un error y se le dira al usuario que ese tipo de archivo no puede ser reproducido"""
 		try:
 			if isinstance(to_play, Playlist):
 				while True:

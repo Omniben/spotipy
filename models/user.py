@@ -12,14 +12,16 @@ class User:
 		self.username = username
 		self._password = password
 		self.created_playlists = []
-
+		self.liked_playlists = []
+		self.liked_albums = []
 
 		for key,value in kwargs.items():
 			setattr(self, key, value)
 
 		self.liked_songs = Playlist("Tus me gusta", self)
-		self.liked_playlists = []
-		self.liked_albums = []
+
+		self.created_playlists.append(self.liked_songs)
+
 
 
 	@property
@@ -42,9 +44,10 @@ class User:
 		return f'{self.username}'
 
 
-#El metodo para dar likes actuara conforme a lo que se le quiera dar like
 
 	def give_like(self, liked):
+		"""Metodo para dar likes que actuara corresponde al tipo de archivo que se le ingrese
+		Puede dar like a instancias de las clases Song, Playlist y Album, si no se le ingresa ninguna de estas dara error"""
 		try:
 			if isinstance(liked, Song):
 				if liked in self.liked_songs.songs:
