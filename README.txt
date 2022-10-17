@@ -8,4 +8,4 @@ Solo debe ejecutar el archivo app.py para comenzar
 
 # Necesario
 
-Debe tener instalado python para ejecutar la app
+Debe tener instalado python para ejecutar la <strong>app</strong>
